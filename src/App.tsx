@@ -66,21 +66,135 @@ export default function App() {
           </div>
         </div>
 
-        <div className="hero__can-wrapper">
-          <div className="hero__can">
-            <div className="hero__can-top">
-              <div className="hero__can-tab"></div>
-            </div>
-            <div className="hero__can-body">
-              <div className="hero__can-label">
-                <span className="hero__can-label-brand">DR<br/>PEPPER</span>
-                <span className="hero__can-label-line"></span>
-                <span className="hero__can-label-sub">23 FLAVORS</span>
-              </div>
-              <div className="hero__can-shine"></div>
-            </div>
-            <div className="hero__can-bottom"></div>
-          </div>
+        <div className="hero__poster-wrapper">
+          <svg viewBox="0 0 280 420" xmlns="http://www.w3.org/2000/svg" aria-label="Dr Pepper vintage poster">
+            <defs>
+              <filter id="posterGrain" x="0%" y="0%" width="100%" height="100%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0" in="noise"/>
+              </filter>
+              <pattern id="posterDots" x="0" y="0" width="7" height="7" patternUnits="userSpaceOnUse">
+                <circle cx="3.5" cy="3.5" r="0.95" fill="#1C0A08" opacity="0.13"/>
+              </pattern>
+              <pattern id="posterDotsLight" x="0" y="0" width="7" height="7" patternUnits="userSpaceOnUse">
+                <circle cx="3.5" cy="3.5" r="0.85" fill="#EADA8A" opacity="0.09"/>
+              </pattern>
+            </defs>
+
+            {/* Aged cream base */}
+            <rect width="280" height="420" fill="#EADA8A" rx="2"/>
+            {/* Halftone texture */}
+            <rect width="280" height="420" fill="url(#posterDots)" opacity="0.9"/>
+
+            {/* Double border */}
+            <rect x="7" y="7" width="266" height="406" fill="none" stroke="#1C0A08" strokeWidth="2.5" rx="1"/>
+            <rect x="12" y="12" width="256" height="396" fill="none" stroke="#1C0A08" strokeWidth="0.75" rx="1"/>
+
+            {/* Dark header block */}
+            <rect x="7" y="7" width="266" height="173" fill="#1C0A08" rx="1"/>
+            <rect x="7" y="7" width="266" height="173" fill="url(#posterDotsLight)"/>
+
+            {/* Corner ornaments inside inner border */}
+            <text x="19" y="25" fontFamily="serif" fontSize="9" fill="#EADA8A" opacity="0.5">✦</text>
+            <text x="253" y="25" fontFamily="serif" fontSize="9" fill="#EADA8A" opacity="0.5" textAnchor="end">✦</text>
+
+            {/* "DR" */}
+            <text x="140" y="84"
+              fontFamily="'Bebas Neue', Impact, sans-serif"
+              fontSize="74"
+              fill="#EADA8A"
+              textAnchor="middle"
+              letterSpacing="14">DR</text>
+
+            {/* Red rules */}
+            <rect x="22" y="93" width="236" height="3" fill="#8B1A18"/>
+            <rect x="32" y="99" width="216" height="1" fill="#8B1A18" opacity="0.55"/>
+
+            {/* "PEPPER" in vintage amber */}
+            <text x="140" y="162"
+              fontFamily="'Bebas Neue', Impact, sans-serif"
+              fontSize="76"
+              fill="#C4923A"
+              textAnchor="middle"
+              letterSpacing="3">PEPPER</text>
+
+            {/* Red transition band */}
+            <rect x="7" y="180" width="266" height="10" fill="#8B1A18"/>
+
+            {/* Italic tagline */}
+            <text x="140" y="218"
+              fontFamily="'DM Serif Display', Georgia, serif"
+              fontStyle="italic"
+              fontSize="13"
+              fill="#2C0F0B"
+              textAnchor="middle"
+              letterSpacing="0.5">The Original American Classic</text>
+
+            {/* EST. with flanking rules */}
+            <line x1="20" y1="231" x2="98" y2="231" stroke="#2C0F0B" strokeWidth="0.75" opacity="0.4"/>
+            <text x="140" y="236"
+              fontFamily="'Bebas Neue', Impact, sans-serif"
+              fontSize="11"
+              fill="#8B1A18"
+              textAnchor="middle"
+              letterSpacing="6">EST.</text>
+            <line x1="182" y1="231" x2="260" y2="231" stroke="#2C0F0B" strokeWidth="0.75" opacity="0.4"/>
+
+            {/* Year */}
+            <text x="140" y="284"
+              fontFamily="'Bebas Neue', Impact, sans-serif"
+              fontSize="58"
+              fill="#1C0A08"
+              textAnchor="middle"
+              letterSpacing="4">1885</text>
+
+            {/* Star ornaments */}
+            <text x="140" y="303"
+              fontFamily="serif"
+              fontSize="10"
+              fill="#8B1A18"
+              textAnchor="middle"
+              letterSpacing="14">✦  ✦  ✦</text>
+
+            {/* 23 Flavors badge */}
+            <rect x="54" y="312" width="172" height="30" fill="#8B1A18"/>
+            <text x="140" y="332"
+              fontFamily="'Bebas Neue', Impact, sans-serif"
+              fontSize="18"
+              fill="#EADA8A"
+              textAnchor="middle"
+              letterSpacing="5">23 FLAVORS</text>
+
+            {/* Location */}
+            <text x="140" y="358"
+              fontFamily="'DM Serif Display', Georgia, serif"
+              fontStyle="italic"
+              fontSize="9.5"
+              fill="#2C0F0B"
+              textAnchor="middle"
+              opacity="0.6"
+              letterSpacing="0.5">Waco, Texas  ·  Since 1885</text>
+
+            {/* Footer band */}
+            <rect x="7" y="367" width="266" height="46" fill="#8B1A18"/>
+            <text x="140" y="387"
+              fontFamily="'Bebas Neue', Impact, sans-serif"
+              fontSize="12"
+              fill="#EADA8A"
+              textAnchor="middle"
+              letterSpacing="7">BORN DIFFERENT</text>
+            <line x1="30" y1="392" x2="250" y2="392" stroke="#EADA8A" strokeWidth="0.5" opacity="0.35"/>
+            <text x="140" y="405"
+              fontFamily="'DM Serif Display', Georgia, serif"
+              fontStyle="italic"
+              fontSize="9"
+              fill="#EADA8A"
+              textAnchor="middle"
+              opacity="0.8">Never Imitated. Never Forgotten.</text>
+
+            {/* Paper grain overlay */}
+            <rect width="280" height="420" filter="url(#posterGrain)" rx="2"/>
+          </svg>
         </div>
 
         <div className="hero__scroll">
