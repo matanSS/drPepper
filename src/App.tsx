@@ -68,7 +68,18 @@ export default function App() {
 
         <div className="hero__can-wrapper">
           <div className="hero__can">
-            <div className="hero__can-label">DR PEPPER</div>
+            <div className="hero__can-top">
+              <div className="hero__can-tab"></div>
+            </div>
+            <div className="hero__can-body">
+              <div className="hero__can-label">
+                <span className="hero__can-label-brand">DR<br/>PEPPER</span>
+                <span className="hero__can-label-line"></span>
+                <span className="hero__can-label-sub">23 FLAVORS</span>
+              </div>
+              <div className="hero__can-shine"></div>
+            </div>
+            <div className="hero__can-bottom"></div>
           </div>
         </div>
 
