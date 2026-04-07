@@ -832,6 +832,46 @@ body {
   50%       { transform: translateY(-54%) rotate(6deg); }
 }
 
+/* HERO — mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding-left: 6%;
+    padding-right: 6%;
+    align-items: flex-end;
+    padding-bottom: 5rem;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__title {
+    font-size: 19vw;
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .hero__cta-primary,
+  .hero__cta-secondary {
+    padding: 1rem 1.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .hero__poster-wrapper {
+    display: none;
+  }
+}
+
 .hero__scroll {
   position: absolute;
   bottom: 2rem;
